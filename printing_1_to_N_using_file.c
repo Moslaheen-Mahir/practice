@@ -12,14 +12,12 @@ int main()
         fprintf(outputFile,"File not found\n");
         return 0;
     }
-    while(true)
+    int n;
+    fscanf(inputFile, "%d", &n);
+    for(int i=1;i<=n;i++)
     {
-        char ch = fgetc(inputFile);
-        if(ch==EOF)
-        {
-            break;
-        }
-        fputc(ch, outputFile);
+        fprintf(outputFile, "%d ", i);
     }
+
     return 0;
 }

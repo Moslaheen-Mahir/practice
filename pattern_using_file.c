@@ -1,6 +1,4 @@
 #include<stdio.h>
-#include<stdbool.h>
-
 int main()
 {
     FILE *inputFile;
@@ -12,14 +10,19 @@ int main()
         fprintf(outputFile,"File not found\n");
         return 0;
     }
-    while(true)
+    int n;
+    fscanf(inputFile,"%d",&n);
+    for(int i=1;i<=n;i++)
     {
-        char ch = fgetc(inputFile);
-        if(ch==EOF)
+        for(int j=n-i;j>0;j--)
         {
-            break;
+            fprintf(outputFile, " ");
         }
-        fputc(ch, outputFile);
+        for(int j=0;j<n;j++)
+        {
+            fprintf(outputFile, "#");
+        }
+        fprintf(outputFile, "\n");
     }
     return 0;
 }
